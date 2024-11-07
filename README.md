@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # delfinen_automation_devops
 
 ## Project Plan
