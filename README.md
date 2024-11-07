@@ -26,7 +26,3 @@ When the tests pass the expected results, the application is containerized with 
 The Docker-containerized app is deployed to Azure, where users can access the application with expected and reliable results.
 Goals and Expected Results:
 The goal is to develop a stable web app that meets user expectations in terms of user-friendliness and correct API requests and data processing. The app is tested and deployed in a DevOps pipeline with GitHub Actions and Azure.
-
-=======
-# delfinen_automation_devops
->>>>>>> 09a36ced265d920eb3a28103b7c0f73fcfdcadb3
