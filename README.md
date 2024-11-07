@@ -2,12 +2,14 @@
 
 ## Project Plan
 
-Project Plan: Delfinen
-Project Members: Kristofer, Larissa & Viji
-Project Overview:
+<br>Project Plan: Delfinen</br>
+<br>Project Members: Kristofer, Larissa & Viji</br>
+Project Overview: 
 The project aims to build a web app using the OpenWeatherMap API where we will write a function to fetch specific locations, meaning the user will enter a location to retrieve data. The data will be displayed with a graph of temperatures for the specified location, using the Streamlit tool.
+
 Functionality and Flow:
 The user enters a location which will then generate temperature data and display the result for the specified location.
+
 Workflow:
 1. API Request:
 A request is sent to the OpenWeatherMap API to fetch the temperature based on a specified location, entered by the user.
