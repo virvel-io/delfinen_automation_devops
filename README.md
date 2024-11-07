@@ -1,28 +1,28 @@
 # dalefinen_automation_devops
 
-## ProjectPlan
+## Project Plan
 
-Projektplan: Delfinen
-Projektmedlemmar: Kristofer, Larissa & Viji
-Projektöversikt:
-Projektet syftar till att bygga en webb-app som använder sig av OpenWeatherMap API där vi ska skriva en funktion för att hämta specifik plats, det vill säga att användaren skriver in en plats för att hämta ut data. Datan kommer att visas med en graf över temperaturer för angiven plats, detta kommer att ske med verktyget Streamlit.
-Funktionalitet och flöde:
-Användaren matar in en plats som då ska generera temperatur och visar ett resultat av temperaturen på den angivna platsen.
-Arbetsflöde:
-1.	API-anrop:
-En förfrågan skickas till OpenWeatherMap API för att hämta temperaturen baserat på en angiven plats, detta görs av användaren.
-2.	Databehandling:
-En funktion bearbetar den mottagna datan och presenterar temperaturen för en angiven plats som en graf.
-3.	Grundläggande UX-design:
-Webb-appen kommer att ha en enkel och användarvänlig design för att säkerställa att användaren snabbt kan interagera med applikationen.
-4.	Unit-tester för API och databehandling:
-Unit-tester implementeras för att säkerställa att API-anropet returnerar korrekt data och att bearbetningsfunktionen fungerar som förväntat. Exempel: Testar att applikationen kan hämta korrekt plats som användaren anger.
-5.	CI/CD-pipeline via GitHub Actions:
-Projektet integreras med en GitHub Actions-pipeline där tester körs automatiskt. Testerna inkluderar exempelvis validering av korrekt angiven plats.
-6.	Docker-containerisering:
-När testerna klarar förväntade resultat, containeriseras applikationen med Docker för att skapa en enhetlig miljö inför distribution.
-7.	Distribution via Azure:
-Den Docker-containeriserade appen distribueras till Azure, där användarna får tillgång till applikationen med ett förväntat och pålitligt resultat.
-Mål och förväntat resultat:
-Målet är att utveckla en stabil webb-app som uppfyller användarnas förväntningar i form av användarvänlighet och korrekta API-anrop samt databehandling. Appen testas och distribueras i en DevOps-pipeline med GitHub Actions och Azure.
+Project Plan: Delfinen
+Project Members: Kristofer, Larissa & Viji
+Project Overview:
+The project aims to build a web app using the OpenWeatherMap API where we will write a function to fetch specific locations, meaning the user will enter a location to retrieve data. The data will be displayed with a graph of temperatures for the specified location, using the Streamlit tool.
+Functionality and Flow:
+The user enters a location which will then generate temperature data and display the result for the specified location.
+Workflow:
+1. API Request:
+A request is sent to the OpenWeatherMap API to fetch the temperature based on a specified location, entered by the user.
+2. Data Processing:
+A function processes the received data and presents the temperature for a specified location as a graph.
+3. Basic UX Design:
+The web app will have a simple and user-friendly design to ensure that the user can quickly interact with the application.
+4. Unit Tests for API and Data Processing:
+Unit tests are implemented to ensure that the API request returns correct data and that the processing function works as expected. Example: Testing that the application can fetch the correct location entered by the user.
+5. CI/CD Pipeline via GitHub Actions:
+The project is integrated with a GitHub Actions pipeline where tests are run automatically. The tests include, for example, validation of the correctly specified location.
+6. Docker Containerization:
+When the tests pass the expected results, the application is containerized with Docker to create a consistent environment for deployment.
+7. Deployment via Azure:
+The Docker-containerized app is deployed to Azure, where users can access the application with expected and reliable results.
+Goals and Expected Results:
+The goal is to develop a stable web app that meets user expectations in terms of user-friendliness and correct API requests and data processing. The app is tested and deployed in a DevOps pipeline with GitHub Actions and Azure.
 
