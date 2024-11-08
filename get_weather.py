@@ -1,6 +1,5 @@
 # Class to get data from the OpenWeatherMap API
 import requests
-import pandas as pd
 from datetime import datetime as dt
 
 class WeatherData:
