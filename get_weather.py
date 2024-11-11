@@ -1,6 +1,14 @@
 # Class to get data from the OpenWeatherMap API
-import requests
+
+# Standard library imports
+import os
 from datetime import datetime as dt
+# Third-party imports
+import requests
+import pandas as pd
+import dotenv
+from datetime import datetime as dt
+
 
 class WeatherData:
     def __init__(self, lat, lon, api_key):
@@ -36,8 +44,6 @@ class WeatherData:
             return None
 
 if __name__ == "__main__":
-    import os
-    import dotenv
     dotenv.load_dotenv('.env')
 
     lat = 59.3293
