@@ -1,4 +1,4 @@
-""" 
+"""
 4.	Integrationstest som verifierar att API fungerar korrekt.
 Integration tests will use actual API calls, 
 so you’ll need a valid API key for OpenWeatherMap and internet connectivity.

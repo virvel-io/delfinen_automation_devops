@@ -1,4 +1,4 @@
-""" 
+"""
 From Project Description
 5.	Unit-test som säkerställer att databehandlingen ger förväntat resultat.
 5.  Unit tests that ensure that data processing produces expected results.
