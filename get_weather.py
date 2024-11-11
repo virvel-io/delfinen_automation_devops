@@ -7,6 +7,8 @@ from datetime import datetime as dt
 import requests
 import pandas as pd
 import dotenv
+from datetime import datetime as dt
+
 
 class WeatherData:
     def __init__(self, lat, lon, api_key):
