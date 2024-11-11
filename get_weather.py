@@ -1,12 +1,8 @@
 # Class to get data from the OpenWeatherMap API
 
-# Standard library imports
-import os
-from datetime import datetime as dt
 # Third-party imports
 import requests
 import pandas as pd
-import dotenv
 from datetime import datetime as dt
 
 
@@ -42,14 +38,3 @@ class WeatherData:
         else:
             print('Could not get weather data. Status code:', weather.status_code)
             return None
-
-if __name__ == "__main__":
-    dotenv.load_dotenv('.env')
-
-    lat = 59.3293
-    lon = 18.0686
-    api_key = os.getenv('api_key')
-
-    weather = WeatherData(lat=lat, lon=lon, api_key=api_key)
-    print(weather.get_current_temp())
-    print(weather.get_temp_next_24h())
