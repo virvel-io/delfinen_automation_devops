@@ -1,8 +1,6 @@
 # Class to get data from the OpenWeatherMap API
 
-# Third-party imports
 import requests
-import pandas as pd
 from datetime import datetime as dt
 
 
@@ -38,3 +36,4 @@ class WeatherData:
         else:
             print('Could not get weather data. Status code:', weather.status_code)
             return None
+
