@@ -37,3 +37,6 @@ class WeatherData:
             print('Could not get weather data. Status code:', weather.status_code)
             return None
 
+    def get_status_code(self):
+        weather = requests.get(self.url)
+        return weather.status_code
