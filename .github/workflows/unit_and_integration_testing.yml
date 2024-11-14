@@ -4,6 +4,7 @@
 name: Integration and Unit testing
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
