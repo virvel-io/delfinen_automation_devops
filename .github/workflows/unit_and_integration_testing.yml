@@ -5,6 +5,12 @@ name: Integration and Unit testing
 
 on:
   workflow_dispatch:
+    inputs:
+      output_log:
+        description: "Would you like to output the test log?"
+        required: true
+        default: false
+        type: boolean
   push:
     branches: [ "main" ]
   pull_request:
@@ -39,5 +45,6 @@ jobs:
       run: |
         pytest -rs --api_key ${{ secrets.RAINBOW_UNICORN }} > test_output.txt
     - name: Output log
+      if: ${{ github.event.inputs.output_log == 'true' }}
       run: cat test_output.txt
         
