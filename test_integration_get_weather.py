@@ -33,6 +33,8 @@ def test_request_success(api_key):
 
 def test_weather_api_invalid_params(api_key):
     """Test the /weather endpoint with invalid parameters to check error handling."""
+    if not api_key:
+        pytest.skip("API key not provided")
     lat = 1000 # Invalid latitude
     lon = 1000 # Invalid longitude
 
