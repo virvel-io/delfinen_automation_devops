@@ -11,6 +11,16 @@ on:
         required: true
         default: false
         type: boolean
+      version:
+        description: "Version of the Docker image to build and push"
+        required: true
+        default: ""
+      deploy:
+        description: "Deploy this version?" 
+        # if true the version will be tagged as latest and automatically deploy to Azure
+        required: true
+        default: false
+        type: boolean
       dungeon_master_approved:
         description: "Has the Dungeon Master approved?"
         required: true
@@ -55,7 +65,7 @@ jobs:
       run: cat test_output.txt
   
   build-and-push:
-  
+    if: ${{ inputs.version != '' }} # Run only when version is specified 
     runs-on: ubuntu-latest
     needs: run-tests
     env:
@@ -70,9 +80,15 @@ jobs:
         username: ${{ env.DOCKER_USERNAME }}
         password: ${{ env.DOCKER_PASSWORD }}
     - name: Build Docker image
-      run: docker build -t $DOCKER_USERNAME/weatherapp:latest .
+      run: docker build -t $DOCKER_USERNAME/weatherapp:${{ inputs.version }} .
     - name: Push Docker image
-      run: docker push $DOCKER_USERNAME/weatherapp:latest
+      run: |
+        docker push $DOCKER_USERNAME/weatherapp:${{ inputs.version }}
+    - name: Tag as latest and deploy
+      if: ${{ inputs.deploy == "true" }}
+      run: |
+        docker tag $DOCKER_USERNAME/weatherapp:${{ inputs.version }} $DOCKER_USERNAME/weatherapp:latest
+        docker push $DOCKER_USERNAME/weatherapp:latest
 
   magic-loot:
     if: ${{ github.event.inputs.dungeon_master_approved == 'true' }}
