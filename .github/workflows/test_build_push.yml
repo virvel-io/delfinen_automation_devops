@@ -15,9 +15,8 @@ on:
         description: "Version of the Docker image to build and push"
         required: true
         default: ""
-      deploy:
-        description: "Deploy this version?" 
-        # if true the version will be tagged as latest and automatically deploy to Azure
+      deploy: # if true the version will be tagged as latest and automatically deploy to Azure
+        description: "Deploy this version?"         
         required: true
         default: false
         type: boolean
