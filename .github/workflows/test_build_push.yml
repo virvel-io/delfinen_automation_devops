@@ -84,7 +84,7 @@ jobs:
       run: |
         docker push $DOCKER_USERNAME/weatherapp:${{ inputs.version }}
     - name: Tag as latest and deploy
-      if: ${{ inputs.deploy == 'true' }}
+      if: ${{ github.event.inputs.deploy == 'true' }}
       run: |
         docker tag $DOCKER_USERNAME/weatherapp:${{ inputs.version }} $DOCKER_USERNAME/weatherapp:latest
         docker push $DOCKER_USERNAME/weatherapp:latest
