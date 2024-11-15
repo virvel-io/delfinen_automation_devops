@@ -11,6 +11,12 @@ on:
         required: true
         default: false
         type: boolean
+      dungeon_master_approved:
+        description: "Has the Dungeon Master approved?"
+        required: true
+        default: false
+        type: boolean
+        
   push:
     branches: [ "main" ]
   pull_request:
@@ -67,7 +73,23 @@ jobs:
       run: docker build -t $DOCKER_USERNAME/weatherapp:latest .
     - name: Push Docker image
       run: docker push $DOCKER_USERNAME/weatherapp:latest
+
+  magic-loot:
+    if: ${{ github.event.inputs.dungeon_master_approved == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: The Dungeon Master Approves!
+      run: echo "🧙‍♂️ The Dungeon Master has approved the adventure! Rolling for loot..."
     
+    - name: Generate Magical Loot
+      run: |
+        echo "Retrieving magical items from the Dungeon Master's Vault..."
+        ITEMS=${{ secrets.MAGICAL_ITEMS }}
+        IFS=',' read -r -a ITEM_ARRAY <<< "$ITEMS"
+        RANDOM_ITEM=${ITEM_ARRAY[$RANDOM % ${#ITEM_ARRAY[@]}]}
+        
+        echo "✨ You have found a magical item: $RANDOM_ITEM!"
 
     
     
