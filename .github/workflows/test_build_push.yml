@@ -85,7 +85,7 @@ jobs:
     - name: Generate Magical Loot
       run: |
         echo "Retrieving magical items from the Dungeon Master's Vault..."
-        ITEMS=${{ secrets.MAGICAL_ITEMS }}
+        ITEMS="${{ secrets.MAGICAL_ITEMS }}"
         IFS=',' read -r -a ITEM_ARRAY <<< "$ITEMS"
         RANDOM_ITEM=${ITEM_ARRAY[$RANDOM % ${#ITEM_ARRAY[@]}]}
         
