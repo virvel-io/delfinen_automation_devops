@@ -86,14 +86,14 @@ jobs:
         username: ${{ env.DOCKER_USERNAME }}
         password: ${{ env.DOCKER_PASSWORD }}
     - name: Build Docker image
-      run: docker build -t $DOCKER_USERNAME/weatherapp:${{ inputs.version }} .
+      run: docker build -t $DOCKER_USERNAME/weatherapp:${{ env.VERSION }} .
     - name: Push Docker image
       run: |
-        docker push $DOCKER_USERNAME/weatherapp:${{ inputs.version }}
+        docker push $DOCKER_USERNAME/weatherapp:${{ env.VERSION }}
     - name: Tag as latest and deploy
       if: ${{ github.event.inputs.deploy == 'true' }}
       run: |
-        docker tag $DOCKER_USERNAME/weatherapp:${{ inputs.version }} $DOCKER_USERNAME/weatherapp:latest
+        docker tag $DOCKER_USERNAME/weatherapp:${{ env.VERSION }} $DOCKER_USERNAME/weatherapp:latest
         docker push $DOCKER_USERNAME/weatherapp:latest
 
   magic-loot:
